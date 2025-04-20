@@ -41,7 +41,7 @@ def denormalize(tensor, min_val, max_val):
     return tensor * (max_val - min_val) + min_val
 
 # Load data
-csv_file = "materials.csv"
+csv_file = r"C:\Users\Rishi\Desktop\physics\expanded_materials.csv"  # UPDATED PATH
 materials, X_train, y_train, X_min, X_max, y_min, y_max = load_material_data(csv_file)
 
 # Model, optimizer, loss
@@ -65,9 +65,10 @@ y_pred_denorm = denormalize(y_pred, y_min, y_max).numpy()
 y_true_denorm = denormalize(y_train, y_min, y_max).numpy()
 
 # Print results
-print("\nPredicted Electrical Conductivity:")
-for mat, cond in zip(materials, y_pred_denorm):
-    print(f"{mat}: Electrical Conductivity = {cond[0]:.2f} MS/m")
+print("\nPredicted vs Actual Electrical Conductivity (MS/m):")
+print(f"{'Material':<20}{'Actual':<20}{'Predicted':<20}")
+for mat, actual, pred in zip(materials, y_true_denorm, y_pred_denorm):
+    print(f"{mat:<20}{actual[0]:<20.2f}{pred[0]:<20.2f}")
 
 # Save to CSV
 df_results = pd.DataFrame({
@@ -75,7 +76,7 @@ df_results = pd.DataFrame({
     "Actual Electrical Conductivity (MS/m)": y_true_denorm.flatten(),
     "Predicted Electrical Conductivity (MS/m)": y_pred_denorm.flatten()
 })
-df_results.to_csv("classical_predicted_electrical_conductivity.csv", index=False)
+df_results.to_csv(r"C:\Users\Rishi\Desktop\physics\classical_predicted_electrical_conductivity.csv", index=False)
 print("\nResults saved to 'classical_predicted_electrical_conductivity.csv'")
 
 # Plot comparison
