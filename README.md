@@ -4,8 +4,8 @@ This project compares two machine learning models — a **Hybrid Quantum-Classic
 
 ---
 
-## 📁 Project Structure
-electrical-conductivity-predictor/
+# 📁 Project Structure
+
 ├── classical.py                               # Classical MLP model using PyTorch  
 ├── hqcnn.py                                   # Hybrid Quantum-Classical model using PennyLane  
 ├── comparemode.py                             # Script to compare outputs from both models  
@@ -15,7 +15,6 @@ electrical-conductivity-predictor/
 ├── .gitignore                                 # Git ignore rules  
 ├── README.md                                  # Project overview and instructions  
 └── venv/                                      # Virtual environment (ignored in Git)  
----
 
 ## ⚙️ Requirements
 
