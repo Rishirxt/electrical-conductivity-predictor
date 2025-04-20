@@ -5,13 +5,16 @@ This project compares two machine learning models — a **Hybrid Quantum-Classic
 ---
 
 ## 📁 Project Structure
-
-electrical-conductivity-predictor/ ├── classical.py # Classical MLP model using PyTorch ├── hqcnn.py # Hybrid Quantum-Classical model using PennyLane ├── comparemode.py # Script to compare outputs from both models ├── materials.csv # Input dataset with material properties ├── predicted_electrical_conductivity.csv # Output from HQCNN model ├── classical_predicted_electrical_conductivity.csv # Output from classical model ├── .gitignore # Git ignore rules ├── README.md # Project overview and instructions └── venv/ # Virtual environment (ignored in Git)
-
-yaml
-Copy
-Edit
-
+electrical-conductivity-predictor/
+├── classical.py                               # Classical MLP model using PyTorch  
+├── hqcnn.py                                   # Hybrid Quantum-Classical model using PennyLane  
+├── comparemode.py                             # Script to compare outputs from both models  
+├── materials.csv                              # Input dataset with material properties  
+├── predicted_electrical_conductivity.csv      # Output from HQCNN model  
+├── classical_predicted_electrical_conductivity.csv  # Output from classical model  
+├── .gitignore                                 # Git ignore rules  
+├── README.md                                  # Project overview and instructions  
+└── venv/                                      # Virtual environment (ignored in Git)  
 ---
 
 ## ⚙️ Requirements
@@ -25,29 +28,15 @@ pip install torch pandas matplotlib pennylane
 Clone the repo or copy the files into your project folder.
 
 Change to the project directory:
-
-bash
-Copy
-Edit
 cd electrical-conductivity-predictor
 (Optional but recommended) Create and activate a virtual environment:
-
-bash
-Copy
-Edit
 python -m venv venv
 source venv/bin/activate         # On Windows: venv\Scripts\activate
+
 Install the required packages:
-
-bash
-Copy
-Edit
 pip install torch pandas matplotlib pennylane
-Run the scripts in the following order:
 
-bash
-Copy
-Edit
+Run the scripts in the following order:
 python hqcnn.py        # Runs the Hybrid Quantum-Classical model
 python classical.py    # Runs the Classical MLP model
 python comparemode.py  # Compares predictions from both models
